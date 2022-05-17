@@ -18,6 +18,24 @@ services:
       - type: volume
         source: mongodb-cfg
         target: /data/configdb
+  web:
+    build: web/
+    container_name: course-project-web
+    command: bash -c "npm run dev"
+    ports:
+      - "3000:3000"
+  api:
+    build: api/
+    depends_on:
+      -  mongo
+    command: bash -c "npm start"
+    networks:
+      - course-project
+    ports:
+      - "3001:3001"
+    links:
+      - mongo
+    container_name: course-project-api
 
 networks:
   course-project:
