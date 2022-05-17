@@ -1,0 +1,20 @@
+.radioButtonsContainer {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  transition: inherit;
+}
+
+.label {
+  transition: inherit;
+  line-height: 17px;
+  font-weight: 500;
+}
+
+.radioButton {
+  margin-bottom: 16px;
+}
+
+.radioButton:last-child {
+  margin-bottom: 0;
+}

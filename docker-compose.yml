@@ -1,0 +1,28 @@
+version: '3.6'
+services:
+  mongo:
+    container_name: course-project-mongo
+    image: mongo:4.4
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=root
+    networks:
+      - course-project
+    ports:
+      - "27017:27017"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - type: volume
+        source: mongodb
+        target: /data/db
+      - type: volume
+        source: mongodb-cfg
+        target: /data/configdb
+
+networks:
+  course-project:
+    name: course-project-network
+
+volumes:
+  mongodb:
+  mongodb-cfg:

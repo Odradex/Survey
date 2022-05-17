@@ -1,0 +1,5 @@
+.container {
+    padding: 20vh 0 0 20vh;
+    display: flex;
+    flex-direction: column;
+}

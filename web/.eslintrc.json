@@ -1,0 +1,25 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [ "airbnb","next/core-web-vitals"],
+  "rules": {
+    "react/jsx-props-no-spreading": "off",
+    "no-underscore-dangle": "off",
+    "react/function-component-definition": [2, {
+      "namedComponents": "arrow-function"
+    }]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx"],
+        "paths": [
+          "src",
+          "node_modules"
+        ]
+      }
+    }
+  }
+}
